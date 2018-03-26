@@ -33,7 +33,7 @@ class WorkloadState(Enum):
 
 def maintenance(message):
     """
-    Set the status to the MAINTENANCE state with the given operator message.
+    Set the status to the `MAINTENANCE` state with the given operator message.
 
     # Parameters
     `message` (str): Message to convey to the operator.
@@ -54,7 +54,7 @@ def maint(message):
 
 def blocked(message):
     """
-    Set the status to the BLOCKED state with the given operator message.
+    Set the status to the `BLOCKED` state with the given operator message.
 
     # Parameters
     `message` (str): Message to convey to the operator.
@@ -64,7 +64,7 @@ def blocked(message):
 
 def waiting(message):
     """
-    Set the status to the WAITING state with the given operator message.
+    Set the status to the `WAITING` state with the given operator message.
 
     # Parameters
     `message` (str): Message to convey to the operator.
@@ -74,7 +74,7 @@ def waiting(message):
 
 def active(message):
     """
-    Set the status to the ACTIVE state with the given operator message.
+    Set the status to the `ACTIVE` state with the given operator message.
 
     # Parameters
     `message` (str): Message to convey to the operator.

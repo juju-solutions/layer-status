@@ -19,7 +19,7 @@ Valid options are:
 maintenance(message)
 ```
 
-Set the status to the MAINTENANCE state with the given operator message.
+Set the status to the `MAINTENANCE` state with the given operator message.
 
 __Parameters__
 
@@ -44,7 +44,7 @@ __Parameters__
 blocked(message)
 ```
 
-Set the status to the BLOCKED state with the given operator message.
+Set the status to the `BLOCKED` state with the given operator message.
 
 __Parameters__
 
@@ -56,7 +56,7 @@ __Parameters__
 waiting(message)
 ```
 
-Set the status to the WAITING state with the given operator message.
+Set the status to the `WAITING` state with the given operator message.
 
 __Parameters__
 
@@ -68,7 +68,7 @@ __Parameters__
 active(message)
 ```
 
-Set the status to the ACTIVE state with the given operator message.
+Set the status to the `ACTIVE` state with the given operator message.
 
 __Parameters__
 
