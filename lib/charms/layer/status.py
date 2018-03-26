@@ -104,9 +104,9 @@ def status_set(workload_state, message):
 def _find_calling_layer():
     for frame in inspect.stack():
         fn = Path(frame.filename)
-        if fn.parent.stub not in ('reactive', 'layer', 'charms'):
+        if fn.parent.stem not in ('reactive', 'layer', 'charms'):
             continue
-        layer_name = fn.stub
+        layer_name = fn.stem
         if layer_name == 'status':
             continue  # skip our own frames
         return layer_name
