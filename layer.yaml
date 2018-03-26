@@ -1,0 +1,8 @@
+defines:
+  patch-hookenv:
+    description: |
+      Whether or not to patch the status_set function in
+      charmhelpers.core.hookenv to ensure that layers using
+      that function directly will work well with this layer.
+    type: boolean
+    default: true
