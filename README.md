@@ -29,6 +29,9 @@ def missing_required_config():
 
 More details can be found in the [docs](docs/status.md).
 
+
+## Conflict Resolution
+
 More importantly, status can be set by different layers without worrying about
 conflicting with each other.  For instance, if one layer (or the charm) sets
 the status to blocked and another layer sets the status to waiting or active,
@@ -52,6 +55,9 @@ conflicting statuses are resolved in the following way:
   setting the status will be determined by the name of the file containing
   the call, as per the convention of naming reactive or library files after
   the layer that contains them.)
+
+
+## Layer Options
 
 To ensure that layers which use `charmhelpers.core.hookenv.status_set` function
 directly work well with this layer, it will be patched to go transparently go
