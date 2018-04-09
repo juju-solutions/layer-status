@@ -140,14 +140,15 @@ def _finalize_status():
 def _status_set_immediate(workload_state, message):
     workload_state = workload_state.value
     try:
+        hookenv.log('status-set: {}: {}'.format(workload_state, message),
+                    hookenv.INFO)
         ret = _orig_call(['status-set', workload_state, message])
         if ret == 0:
             return
     except OSError as e:
+        # ignore status-set not available on older controllers
         if e.errno != errno.ENOENT:
             raise
-    hookenv.log('status-set failed: {} {}'.format(workload_state, message),
-                hookenv.INFO)
 
 
 def _patch_hookenv():
