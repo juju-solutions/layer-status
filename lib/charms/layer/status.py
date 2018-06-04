@@ -103,7 +103,8 @@ def status_set(workload_state, message):
 
 def _find_calling_layer():
     for frame in inspect.stack():
-        fn = Path(frame.filename)
+        # switch to .filename when trusty (Python 3.4) is EOL
+        fn = Path(frame[1])
         if fn.parent.stem not in ('reactive', 'layer', 'charms'):
             continue
         layer_name = fn.stem
