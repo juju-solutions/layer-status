@@ -116,7 +116,8 @@ def _find_calling_layer():
 
 def _finalize_status():
     charm_name = hookenv.charm_name()
-    includes = yaml.load(Path('layer.yaml').read_text()).get('includes', [])
+    with Path('layer.yaml').open() as fp:
+        includes = yaml.load(fp.read()).get('includes', [])
     layer_order = includes + [charm_name]
 
     for workload_state in WorkloadState:
