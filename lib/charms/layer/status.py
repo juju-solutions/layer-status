@@ -170,4 +170,4 @@ def _patched_call(cmd, *args, **kwargs):
         return _orig_call(cmd, *args, **kwargs)
     _, workload_state, message = cmd
     status_set(workload_state, message)
-    return 0
+    return 0  # make hookenv.status_set not emit spurious failure logs
