@@ -137,7 +137,7 @@ def _finalize():
         _statuses['_finalized'] = True
     charm_name = hookenv.charm_name()
     with Path('layer.yaml').open() as fp:
-        includes = yaml.load(fp.read()).get('includes', [])
+        includes = yaml.safe_load(fp.read()).get('includes', [])
     layer_order = includes + [charm_name]
 
     for workload_state in WorkloadState:
