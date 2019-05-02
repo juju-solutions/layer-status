@@ -136,7 +136,8 @@ def _finalize():
         # but subsequently starts the reactive bus.
         _statuses['_finalized'] = True
     charm_name = hookenv.charm_name()
-    with Path('layer.yaml').open() as fp:
+    charm_dir = Path(hookenv.charm_dir())
+    with charm_dir.joinpath('layer.yaml').open() as fp:
         includes = yaml.load(fp.read()).get('includes', [])
     layer_order = includes + [charm_name]
 
