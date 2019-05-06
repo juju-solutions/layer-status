@@ -138,7 +138,8 @@ def _finalize():
     charm_name = hookenv.charm_name()
     charm_dir = Path(hookenv.charm_dir())
     with charm_dir.joinpath('layer.yaml').open() as fp:
-        includes = yaml.load(fp.read()).get('includes', [])
+        includes = yaml.load(fp.read(),
+                             Loader=yaml.FullLoader).get('includes', [])
     layer_order = includes + [charm_name]
 
     for workload_state in WorkloadState:
